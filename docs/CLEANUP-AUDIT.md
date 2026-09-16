@@ -4,6 +4,8 @@ Inventory first. Deletion only from AUTO-DELETE. REVIEW untouched.
 
 No prior `.git`. Canonical lockfile: `package-lock.json` (npm). No yarn.lock / pnpm-lock.yaml / bun.lockb. No CI config. Kept `package-lock.json`.
 
+Hygiene commit: `a43a51b chore: repo hygiene pass` (root commit — this sandbox had no history). Verify after: `npm ci`, `tsc` clean, product suite 281/281, production build ok.
+
 ## AUTO-DELETE
 
 By filename pattern only.

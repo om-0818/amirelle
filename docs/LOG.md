@@ -62,6 +62,13 @@ Amendments: no generation of faces/bodies/garments; legal/minors/money → REVIE
 
 ## Log
 
+### 2026-09-16 19:33 IST — publish
+- **Task:** Publish. Kai asked. Grok project registered. GitHub private repo pushed. Vercel Git link blocked (app cannot see private repo).
+- **Grok:** `init_or_update_app` → project `01a0aa88-9c89-7cc1-8a53-eca93a9bef7d`.
+- **GitHub:** [om-0818/amirelle](https://github.com/om-0818/amirelle) private, `main` at `697f9e0`.
+- **Vercel:** `create_git_project` 400 `repo_not_found`. Grant the Vercel GitHub app access to that repo, then the link will take.
+- **Assumptions:** Checkout stays off. No live keys shipped.
+
 ### 2026-09-16 19:25 IST — repo hygiene
 - **Task:** Inventory, delete AUTO-DELETE only, gitignore the cause, isolated commit, verify.
 - **Files:** `docs/CLEANUP-AUDIT.md`, `.gitignore`, `docs/REVIEW-REQUIRED.md`, `docs/LOG.md`. Deleted `.grok/preview.log`, `.vercel/`.
