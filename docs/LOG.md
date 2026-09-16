@@ -56,10 +56,19 @@ Amendments: no generation of faces/bodies/garments; legal/minors/money → REVIE
 - [x] Landing: one sentence. OG, sitemap. No costume copy. Signed-out `/` is the door.
 - [x] Release audit: 278 product tests, 2000 plates, audit 0, secrets 3/3. `/docs/HANDOVER-2.md`.
 - [x] Final gate: `/docs/FINAL-GATE-REPORT.md`. NOT READY. No publish.
+- [x] Repo hygiene: AUTO-DELETE gone. REVIEW untouched. `.gitignore` covers junk. `a43a51b chore: repo hygiene pass`.
 - [ ] Composite remaining cats (dresses, outer, acc) onto the silent form.
 - [ ] Unsplash stills ≠ SKUs (CUT_STILL coverage).
 
 ## Log
+
+### 2026-09-16 19:25 IST — repo hygiene
+- **Task:** Inventory, delete AUTO-DELETE only, gitignore the cause, isolated commit, verify.
+- **Files:** `docs/CLEANUP-AUDIT.md`, `.gitignore`, `docs/REVIEW-REQUIRED.md`, `docs/LOG.md`. Deleted `.grok/preview.log`, `.vercel/`.
+- **Kept lockfile:** `package-lock.json` (npm). No other lockfiles.
+- **Commit:** `a43a51b chore: repo hygiene pass` — root commit; there was no prior `.git`.
+- **Verify:** `npm ci`, `tsc` clean, product suite **281/281**, `npm run build` ok. REVIEW list still on disk. Secret path flagged, not deleted.
+- **Still broken:** Unsplash ≠ SKUs. Composite 3 cats. Sitting local plan. `gen.gen` on login.
 
 ### 2026-09-16 19:18 IST — final pre-publish gate
 - **Task:** 12-section audit. Report only. No publish. No deploy.
