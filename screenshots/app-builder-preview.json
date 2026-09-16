@@ -1,0 +1,36 @@
+{
+  "url": "http://127.0.0.1:8080/",
+  "viewports": {
+    "desktop": {
+      "width": 1280,
+      "height": 800,
+      "status": 200,
+      "title": "Amirelle — private house",
+      "hasCanvas": false,
+      "bodyTextLen": 8,
+      "bodyTextHash": "fc9dc21ca4616491cb3462973aee500efc51960876510da9c9ca4c983f13fccc",
+      "bodyTextPrefix": "Amirelle",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/app-builder-preview.png"
+    },
+    "mobile": {
+      "width": 390,
+      "height": 844,
+      "status": 200,
+      "title": "Amirelle — private house",
+      "hasCanvas": false,
+      "bodyTextLen": 209,
+      "bodyTextHash": "2d1afa8081d109c9da3c75b2982980bffe62bbd8cfba043b91a3cab49deb2894",
+      "bodyTextPrefix": "PRIVATE HOUSE Amirelle Google, X, or email. Then we ask your gen",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/app-builder-preview-mobile.png"
+    }
+  },
+  "brandWarnings": [],
+  "authWarnings": [],
+  "verdictFile": "/workspace/screenshots/app-builder-preview.json"
+}

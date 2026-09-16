@@ -1,0 +1,2 @@
+- Amirelle AI Style Companion: single-file HTML fashion app (wardrobe + weather + Groq outfit suggestions). Improved version saved to artifacts/amirelle.html [2026-07-22]
+- Key improvements: API key now user-supplied via Settings (localStorage only, never hardcoded), image compression on upload, search/filter, edit items, force-include selection, export/import JSON, dark mode toggle, robust JSON AI parsing with fallback, toasts, confirm deletes.
