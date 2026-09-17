@@ -14,13 +14,13 @@ function sha256(s: string) {
 }
 
 describe("CSP", () => {
-  it("has no unsafe-inline and no unsafe-eval", () => {
+  it("has no unsafe-eval; Start bootstrap needs unsafe-inline", () => {
     const prod = contentSecurityPolicy("prod");
     const preview = contentSecurityPolicy("preview");
     for (const csp of [prod, preview]) {
-      assert.doesNotMatch(csp, /unsafe-inline/);
       assert.doesNotMatch(csp, /unsafe-eval/);
-      assert.match(csp, /script-src 'self' https:\/\/grok.com/);
+      assert.match(csp, /script-src 'self' https:\/\/grok.com 'unsafe-inline'/);
+      assert.match(csp, /style-src 'self' https:\/\/fonts.googleapis.com 'unsafe-inline'/);
       assert.match(csp, /object-src 'none'/);
     }
     assert.match(prod, /frame-ancestors 'none'/);
@@ -46,8 +46,9 @@ describe("CSP", () => {
     assert.deepEqual([...POPUP_SCRIPT_SHA].sort(), scripts.sort());
     assert.deepEqual([...POPUP_STYLE_SHA].sort(), styles.sort());
     const csp = contentSecurityPolicy("prod");
+    assert.doesNotMatch(csp, /sha256-/);
     for (const h of [...POPUP_SCRIPT_SHA, ...POPUP_STYLE_SHA]) {
-      assert.match(csp, new RegExp(h.replace(/[+/]/g, "\\$&")));
+      assert.match(h, /^sha256-/);
     }
   });
 });

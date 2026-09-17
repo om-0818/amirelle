@@ -1,4 +1,10 @@
-/** Security headers. No `unsafe-inline`, no `unsafe-eval`. */
+/** Security headers.
+ *
+ * Start writes a per-request inline `$_TSR` bootstrap (the payload includes a
+ * timestamp, so a hash cannot be pinned). That script must run or the desk
+ * hydrates into a black error. `'unsafe-inline'` is allowed on script and
+ * style for that reason only — still no `'unsafe-eval'`.
+ */
 
 export type HeaderKind = "prod" | "preview";
 
@@ -19,8 +25,9 @@ export function contentSecurityPolicy(kind: HeaderKind): string {
       : "frame-ancestors https://grok.com https://*.grok.com";
   return [
     "default-src 'self'",
-    `script-src 'self' https://grok.com ${POPUP_SCRIPT_SHA.map((s) => `'${s}'`).join(" ")}`,
-    `style-src-elem 'self' https://fonts.googleapis.com ${POPUP_STYLE_SHA.map((s) => `'${s}'`).join(" ")}`,
+    "script-src 'self' https://grok.com 'unsafe-inline'",
+    "style-src 'self' https://fonts.googleapis.com 'unsafe-inline'",
+    "style-src-elem 'self' https://fonts.googleapis.com 'unsafe-inline'",
     "font-src 'self' https://fonts.gstatic.com",
     "img-src 'self' data: blob: https://images.unsplash.com",
     "connect-src 'self' https://grok.com wss: ws:",
