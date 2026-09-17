@@ -90,5 +90,7 @@ describe("polish", () => {
     assert.match(map, /<loc>\/login<\/loc>/);
     assert.deepEqual([...SITEMAP_PATHS], ["/", "/login"]);
     assert.match(shell, /<Landing \/>/);
+    assert.match(shell, /if \(!user\) return <Landing \/>/);
+    assert.doesNotMatch(shell, /if \(isPending\)/);
   });
 });

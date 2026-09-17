@@ -30,7 +30,7 @@ function ScreenFallback() {
 }
 
 export function Shell() {
-  const { user, isPending } = useCurrentUserState();
+  const { user } = useCurrentUserState();
   const screen = useCloset((s) => s.screen);
   const setScreen = useCloset((s) => s.setScreen);
   const weatherTheme = useCloset((s) => s.weather.theme);
@@ -145,13 +145,6 @@ export function Shell() {
     document.documentElement.dataset.weather = weatherTheme || "";
   }, [weatherTheme]);
 
-  if (isPending) {
-    return (
-      <div className="grid min-h-dvh place-items-center bg-bg text-muted">
-        <p className="font-display text-3xl italic">Amirelle</p>
-      </div>
-    );
-  }
   if (!user) return <Landing />;
   if (screen === "welcome" || !useCloset.getState().meta.gender) return <Welcome />;
 
